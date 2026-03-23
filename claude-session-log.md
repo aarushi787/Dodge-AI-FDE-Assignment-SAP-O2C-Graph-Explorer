@@ -1,45 +1,30 @@
 # AI Session Log — Dodge AI FDE Assignment
-**Tool:** Claude (claude.ai)
+Tool: Claude (claude.ai)
 
 ---
 
-## Workflow
-Describe requirement → Claude generates code → run it → find what breaks → fix with context → repeat. Every major component went through 2–4 iterations.
+## How I worked
+
+I used Claude throughout — describe what I want, review the output, run it, see what breaks, go again. Most things took 2-3 rounds before they actually worked properly.
 
 ---
 
-## Key Decisions I Made
+## Decisions I made
 
-**Architecture:** SQLite WASM over Neo4j/Postgres — 944KB DB loads entirely in-browser, zero backend, deploys to any static host.
+Went with SQLite WASM instead of Neo4j or Postgres. The DB is only 944KB so it loads entirely in the browser — no backend needed, works on any static host. Made the demo much simpler to deploy.
 
-**LLM prompt design:** Layered system prompt — role, guardrails (`isOffTopic:true` for non-O2C), full schema with FK annotations, explicit O2C join chain, raw JSON response contract `{sql, explanation, isOffTopic}`. Raw JSON so SQL can be parsed deterministically and run directly against WASM SQLite.
+For the LLM prompting I designed the system prompt myself in layers: role definition, strict guardrails (reject anything not O2C related), full schema with FK relationships written out, and a raw JSON response contract. Raw JSON because I wanted to parse the SQL deterministically and run it directly — no regex on prose.
 
-**Anomaly checks I designed** (5 checks, Claude wrote the SQL):
-- Delivered not billed → revenue leakage
-- Billed not posted to AR → accounting gap
-- Open AR no payment → cash flow risk
-- Cancelled docs → 49% cancellation rate in this dataset is a red flag worth surfacing
-- Orders without delivery → stalled/blocked
+The 5 anomaly checks were my idea based on understanding the O2C domain. Delivered not billed, billed with no journal entry, open AR, cancelled docs (49% cancellation rate in this dataset stood out), orders stuck without delivery. Claude wrote the SQL once I told it what to look for.
 
 ---
 
-## Bugs I Caught & Fixed
+## Bugs I found
 
-| Bug | Root Cause | Fix |
-|---|---|---|
-| API key modal blocked UI | App called `/api/chat` but ran as static files | Direct Anthropic API call with browser access header |
-| Search wiped query highlights | Single `highlighted` Set overwritten | Two independent Sets merged at canvas render |
-| Payment→JE join wrong | `payments.accountingDocument` ≠ JE doc number | Changed to `payments.clearingAccountingDocument` |
-| Graph silently incomplete | LIMIT 50 on 100 SOs, LIMIT 60 on 163 billing docs | Removed all LIMITs, node count ~200→~500+ |
+Payment→JE join was wrong. I was linking on payments.accountingDocument which is the payment's own doc number — not the journal entry it clears. Fixed it to use clearingAccountingDocument instead.
 
----
+Graph was silently showing incomplete data. Had LIMIT 50 on 100 sales orders, LIMIT 60 on 163 billing docs. Nothing errored, just dropped data. Caught it during review, removed all the limits.
 
-## What I Did vs Claude
+Search highlights were wiping out query highlights because both used the same Set. Fixed by keeping two separate Sets and merging them at render time.
 
-| Task | Me | Claude |
-|---|---|---|
-| FK mapping & O2C chain | Directed | Executed |
-| Architecture choice | Decided | Implemented |
-| System prompt design | Designed | Wrote final text |
-| Anomaly check logic | Designed | Wrote SQL |
-| Bug identification | Found all 4 | Fixed on instruction |
+API key modal was blocking the whole UI because the app was calling /api/chat (an Express proxy) but running as static files. Switched to direct Anthropic API calls.
