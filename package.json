@@ -1,0 +1,25 @@
+{
+  "name": "dodge-ai-sap-o2c",
+  "version": "1.0.0",
+  "description": "SAP Order-to-Cash Graph Explorer — Dodge AI take-home assignment",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "lucide-react": "^0.383.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-force-graph-2d": "^1.25.5",
+    "sql.js": "^1.10.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^6.4.1"
+  }
+}

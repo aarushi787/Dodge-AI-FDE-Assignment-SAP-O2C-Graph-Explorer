@@ -1,0 +1,375 @@
+{
+  "sales_order_headers": {
+    "columns": [
+      "createdByUser",
+      "creationDate",
+      "customerPaymentTerms",
+      "deliveryBlockReason",
+      "distributionChannel",
+      "headerBillingBlockReason",
+      "incotermsClassification",
+      "incotermsLocation1",
+      "lastChangeDateTime",
+      "organizationDivision",
+      "overallDeliveryStatus",
+      "overallOrdReltdBillgStatus",
+      "overallSdDocReferenceStatus",
+      "pricingDate",
+      "requestedDeliveryDate",
+      "salesGroup",
+      "salesOffice",
+      "salesOrder",
+      "salesOrderType",
+      "salesOrganization",
+      "soldToParty",
+      "totalCreditCheckStatus",
+      "totalNetAmount",
+      "transactionCurrency"
+    ],
+    "row_count": 100
+  },
+  "sales_order_items": {
+    "columns": [
+      "itemBillingBlockReason",
+      "material",
+      "materialGroup",
+      "netAmount",
+      "productionPlant",
+      "requestedQuantity",
+      "requestedQuantityUnit",
+      "salesDocumentRjcnReason",
+      "salesOrder",
+      "salesOrderItem",
+      "salesOrderItemCategory",
+      "storageLocation",
+      "transactionCurrency"
+    ],
+    "row_count": 167
+  },
+  "sales_order_schedule_lines": {
+    "columns": [
+      "confdOrderQtyByMatlAvailCheck",
+      "confirmedDeliveryDate",
+      "orderQuantityUnit",
+      "salesOrder",
+      "salesOrderItem",
+      "scheduleLine"
+    ],
+    "row_count": 179
+  },
+  "outbound_delivery_headers": {
+    "columns": [
+      "actualGoodsMovementDate",
+      "actualGoodsMovementTime_hours",
+      "actualGoodsMovementTime_minutes",
+      "actualGoodsMovementTime_seconds",
+      "creationDate",
+      "creationTime_hours",
+      "creationTime_minutes",
+      "creationTime_seconds",
+      "deliveryBlockReason",
+      "deliveryDocument",
+      "hdrGeneralIncompletionStatus",
+      "headerBillingBlockReason",
+      "lastChangeDate",
+      "overallGoodsMovementStatus",
+      "overallPickingStatus",
+      "overallProofOfDeliveryStatus",
+      "shippingPoint"
+    ],
+    "row_count": 86
+  },
+  "outbound_delivery_items": {
+    "columns": [
+      "actualDeliveryQuantity",
+      "batch",
+      "deliveryDocument",
+      "deliveryDocumentItem",
+      "deliveryQuantityUnit",
+      "itemBillingBlockReason",
+      "lastChangeDate",
+      "plant",
+      "referenceSdDocument",
+      "referenceSdDocumentItem",
+      "storageLocation"
+    ],
+    "row_count": 137
+  },
+  "billing_document_headers": {
+    "columns": [
+      "accountingDocument",
+      "billingDocument",
+      "billingDocumentDate",
+      "billingDocumentIsCancelled",
+      "billingDocumentType",
+      "cancelledBillingDocument",
+      "companyCode",
+      "creationDate",
+      "creationTime_hours",
+      "creationTime_minutes",
+      "creationTime_seconds",
+      "fiscalYear",
+      "lastChangeDateTime",
+      "soldToParty",
+      "totalNetAmount",
+      "transactionCurrency"
+    ],
+    "row_count": 163
+  },
+  "billing_document_items": {
+    "columns": [
+      "billingDocument",
+      "billingDocumentItem",
+      "billingQuantity",
+      "billingQuantityUnit",
+      "material",
+      "netAmount",
+      "referenceSdDocument",
+      "referenceSdDocumentItem",
+      "transactionCurrency"
+    ],
+    "row_count": 245
+  },
+  "billing_document_cancellations": {
+    "columns": [
+      "accountingDocument",
+      "billingDocument",
+      "billingDocumentDate",
+      "billingDocumentIsCancelled",
+      "billingDocumentType",
+      "cancelledBillingDocument",
+      "companyCode",
+      "creationDate",
+      "creationTime_hours",
+      "creationTime_minutes",
+      "creationTime_seconds",
+      "fiscalYear",
+      "lastChangeDateTime",
+      "soldToParty",
+      "totalNetAmount",
+      "transactionCurrency"
+    ],
+    "row_count": 80
+  },
+  "journal_entries": {
+    "columns": [
+      "accountingDocument",
+      "accountingDocumentItem",
+      "accountingDocumentType",
+      "amountInCompanyCodeCurrency",
+      "amountInTransactionCurrency",
+      "assignmentReference",
+      "clearingAccountingDocument",
+      "clearingDate",
+      "clearingDocFiscalYear",
+      "companyCode",
+      "companyCodeCurrency",
+      "costCenter",
+      "customer",
+      "documentDate",
+      "financialAccountType",
+      "fiscalYear",
+      "glAccount",
+      "lastChangeDateTime",
+      "postingDate",
+      "profitCenter",
+      "referenceDocument",
+      "transactionCurrency"
+    ],
+    "row_count": 123
+  },
+  "payments": {
+    "columns": [
+      "accountingDocument",
+      "accountingDocumentItem",
+      "amountInCompanyCodeCurrency",
+      "amountInTransactionCurrency",
+      "assignmentReference",
+      "clearingAccountingDocument",
+      "clearingDate",
+      "clearingDocFiscalYear",
+      "companyCode",
+      "companyCodeCurrency",
+      "costCenter",
+      "customer",
+      "documentDate",
+      "financialAccountType",
+      "fiscalYear",
+      "glAccount",
+      "invoiceReference",
+      "invoiceReferenceFiscalYear",
+      "postingDate",
+      "profitCenter",
+      "salesDocument",
+      "salesDocumentItem",
+      "transactionCurrency"
+    ],
+    "row_count": 120
+  },
+  "business_partners": {
+    "columns": [
+      "businessPartner",
+      "businessPartnerCategory",
+      "businessPartnerFullName",
+      "businessPartnerGrouping",
+      "businessPartnerIsBlocked",
+      "businessPartnerName",
+      "correspondenceLanguage",
+      "createdByUser",
+      "creationDate",
+      "creationTime_hours",
+      "creationTime_minutes",
+      "creationTime_seconds",
+      "customer",
+      "firstName",
+      "formOfAddress",
+      "industry",
+      "isMarkedForArchiving",
+      "lastChangeDate",
+      "lastName",
+      "organizationBpName1",
+      "organizationBpName2"
+    ],
+    "row_count": 8
+  },
+  "business_partner_addresses": {
+    "columns": [
+      "addressId",
+      "addressTimeZone",
+      "addressUuid",
+      "businessPartner",
+      "cityName",
+      "country",
+      "poBox",
+      "poBoxDeviatingCityName",
+      "poBoxDeviatingCountry",
+      "poBoxDeviatingRegion",
+      "poBoxIsWithoutNumber",
+      "poBoxLobbyName",
+      "poBoxPostalCode",
+      "postalCode",
+      "region",
+      "streetName",
+      "taxJurisdiction",
+      "transportZone",
+      "validityEndDate",
+      "validityStartDate"
+    ],
+    "row_count": 8
+  },
+  "customer_company_assignments": {
+    "columns": [
+      "accountingClerk",
+      "accountingClerkFaxNumber",
+      "accountingClerkInternetAddress",
+      "accountingClerkPhoneNumber",
+      "alternativePayerAccount",
+      "companyCode",
+      "customer",
+      "customerAccountGroup",
+      "deletionIndicator",
+      "paymentBlockingReason",
+      "paymentMethodsList",
+      "paymentTerms",
+      "reconciliationAccount"
+    ],
+    "row_count": 8
+  },
+  "customer_sales_area_assignments": {
+    "columns": [
+      "billingIsBlockedForCustomer",
+      "completeDeliveryIsDefined",
+      "creditControlArea",
+      "currency",
+      "customer",
+      "customerPaymentTerms",
+      "deliveryPriority",
+      "distributionChannel",
+      "division",
+      "exchangeRateType",
+      "incotermsClassification",
+      "incotermsLocation1",
+      "salesDistrict",
+      "salesGroup",
+      "salesOffice",
+      "salesOrganization",
+      "shippingCondition",
+      "slsUnlmtdOvrdelivIsAllwd",
+      "supplyingPlant"
+    ],
+    "row_count": 28
+  },
+  "products": {
+    "columns": [
+      "baseUnit",
+      "createdByUser",
+      "creationDate",
+      "crossPlantStatus",
+      "crossPlantStatusValidityDate",
+      "division",
+      "grossWeight",
+      "industrySector",
+      "isMarkedForDeletion",
+      "lastChangeDate",
+      "lastChangeDateTime",
+      "netWeight",
+      "product",
+      "productGroup",
+      "productOldId",
+      "productType",
+      "weightUnit"
+    ],
+    "row_count": 69
+  },
+  "product_descriptions": {
+    "columns": [
+      "language",
+      "product",
+      "productDescription"
+    ],
+    "row_count": 69
+  },
+  "plants": {
+    "columns": [
+      "addressId",
+      "defaultPurchasingOrganization",
+      "distributionChannel",
+      "division",
+      "factoryCalendar",
+      "isMarkedForArchiving",
+      "language",
+      "plant",
+      "plantCategory",
+      "plantCustomer",
+      "plantName",
+      "plantSupplier",
+      "salesOrganization",
+      "valuationArea"
+    ],
+    "row_count": 44
+  },
+  "product_plants": {
+    "columns": [
+      "availabilityCheckType",
+      "countryOfOrigin",
+      "fiscalYearVariant",
+      "mrpType",
+      "plant",
+      "product",
+      "productionInvtryManagedLoc",
+      "profitCenter",
+      "regionOfOrigin"
+    ],
+    "row_count": 3036
+  },
+  "product_storage_locations": {
+    "columns": [
+      "dateOfLastPostedCntUnRstrcdStk",
+      "physicalInventoryBlockInd",
+      "plant",
+      "product",
+      "storageLocation"
+    ],
+    "row_count": 16723
+  }
+}
